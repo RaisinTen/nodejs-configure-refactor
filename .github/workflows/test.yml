@@ -1,0 +1,18 @@
+name: test
+
+on:
+  push:
+    branches: [ '*' ]
+  pull_request:
+    branches: [ '*' ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: test
+      run: |
+        diff <(python3 configure-argparse.py) <(python3 configure-optparse.py)
