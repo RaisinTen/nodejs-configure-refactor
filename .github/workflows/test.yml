@@ -14,7 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: test
-      run: |
-        while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-            diff <(python3 configure-argparse.py $LINE) <(python3 configure-optparse.py $LINE)
-        done < args.txt
+      run: ./configure-test.sh
