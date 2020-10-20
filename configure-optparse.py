@@ -740,8 +740,8 @@ parser.add_option('-C',
 (options, args) = parser.parse_args()
 
 # REMOVE BEGIN RAISINTEN
-print(options)
-print(args)
+pprint.pprint(vars(options), indent=4)
+pprint.pprint(args)
 sys.exit()
 # REMOVE END RAISINTEN
 
