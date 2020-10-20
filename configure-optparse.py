@@ -27,6 +27,8 @@ original_argv = sys.argv[1:]
 CC = os.environ.get('CC', 'cc' if sys.platform == 'darwin' else 'gcc')
 CXX = os.environ.get('CXX', 'c++' if sys.platform == 'darwin' else 'g++')
 
+'''
+UNCOMMENT BEGIN RAISINTEN
 sys.path.insert(0, os.path.join('tools', 'gyp', 'pylib'))
 from gyp.common import GetFlavor
 
@@ -39,6 +41,8 @@ sys.path.insert(0, 'tools')
 import getmoduleversion
 import getnapibuildversion
 from gyp_node import run_gyp
+UNCOMMENT END RAISINTEN
+'''
 
 # parse our options
 parser = optparse.OptionParser()
@@ -53,8 +57,13 @@ valid_mips_arch = ('loongson', 'r1', 'r2', 'r6', 'rx')
 valid_mips_fpu = ('fp32', 'fp64', 'fpxx')
 valid_mips_float_abi = ('soft', 'hard')
 valid_intl_modes = ('none', 'small-icu', 'full-icu', 'system-icu')
+'''
+UNCOMMENT BEGIN RAISINTEN
 with open ('tools/icu/icu_versions.json') as f:
   icu_versions = json.load(f)
+UNCOMMENT END RAISINTEN
+'''
+icu_versions = {'minimum_icu': 67};
 
 # create option groups
 shared_optgroup = optparse.OptionGroup(parser, "Shared libraries",
@@ -567,7 +576,8 @@ parser.add_option('--without-node-code-cache',
 intl_optgroup.add_option('--download',
     action='store',
     dest='download_list',
-    help=nodedownload.help())
+    # help=nodedownload.help()) # UNCOMMENT RAISINTEN
+    help='nodedownload.help()') # REMOVE RAISINTEN
 
 intl_optgroup.add_option('--download-path',
     action='store',
@@ -728,6 +738,12 @@ parser.add_option('-C',
     help=optparse.SUPPRESS_HELP)
 
 (options, args) = parser.parse_args()
+
+# REMOVE BEGIN RAISINTEN
+print(options)
+print(args)
+sys.exit()
+# REMOVE END RAISINTEN
 
 # Expand ~ in the install prefix now, it gets written to multiple files.
 options.prefix = os.path.expanduser(options.prefix or '')
