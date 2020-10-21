@@ -3,7 +3,7 @@ from __future__ import print_function
 import json
 import sys
 import errno
-import optparse
+import argparse
 import os
 import pipes
 import pprint
@@ -45,7 +45,7 @@ UNCOMMENT END RAISINTEN
 '''
 
 # parse our options
-parser = optparse.OptionParser()
+parser = argparse.OptionParser()
 
 valid_os = ('win', 'mac', 'solaris', 'freebsd', 'openbsd', 'linux',
             'android', 'aix', 'cloudabi')
@@ -66,14 +66,14 @@ UNCOMMENT END RAISINTEN
 icu_versions = {'minimum_icu': 67};
 
 # create option groups
-shared_optgroup = optparse.OptionGroup(parser, "Shared libraries",
+shared_optgroup = argparse.OptionGroup(parser, "Shared libraries",
     "Flags that allows you to control whether you want to build against "
     "built-in dependencies or its shared representations. If necessary, "
     "provide multiple libraries with comma.")
-intl_optgroup = optparse.OptionGroup(parser, "Internationalization",
+intl_optgroup = argparse.OptionGroup(parser, "Internationalization",
     "Flags that lets you enable i18n features in Node.js as well as which "
     "library you want to build against.")
-http2_optgroup = optparse.OptionGroup(parser, "HTTP2",
+http2_optgroup = argparse.OptionGroup(parser, "HTTP2",
     "Flags that allows you to control HTTP2 features in Node.js")
 
 # Options should be in alphabetical order but keep --prefix at the top,
@@ -427,7 +427,7 @@ parser.add_option('--release-urlbase',
 parser.add_option('--enable-d8',
     action='store_true',
     dest='enable_d8',
-    help=optparse.SUPPRESS_HELP)  # Unsupported, undocumented.
+    help=argparse.SUPPRESS_HELP)  # Unsupported, undocumented.
 
 parser.add_option('--enable-trace-maps',
     action='store_true',
@@ -618,22 +618,22 @@ parser.add_option('--without-npm',
 parser.add_option('--without-report',
     action='store_true',
     dest='unused_without_report',
-    help=optparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS_HELP)
 
 parser.add_option('--with-snapshot',
     action='store_true',
     dest='unused_with_snapshot',
-    help=optparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS_HELP)
 
 parser.add_option('--without-snapshot',
     action='store_true',
     dest='unused_without_snapshot',
-    help=optparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS_HELP)
 
 parser.add_option('--without-siphash',
     action='store_true',
     dest='without_siphash',
-    help=optparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS_HELP)
 
 # End dummy list.
 
@@ -735,7 +735,7 @@ parser.add_option('--node-builtin-modules-path',
 parser.add_option('-C',
     action='store_true',
     dest='compile_commands_json',
-    help=optparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS_HELP)
 
 (options, args) = parser.parse_args()
 
