@@ -1,1 +1,18 @@
 
+--prefix /some/path
+--prefix /some/path --prefix /some/other/path
+--coverage
+--coverage --coverage
+--prefix /some/path --coverage
+--coverage --prefix /some/path
+--dest-cpu ia32
+--shared-http-parser
+--shared-http-parser-includes /some/path
+--shared-http-parser --shared-http-parser-includes /some/path
+--shared-http-parser-includes /some/path --shared-http-parser
+--with-intl small-icu
+--without-intl
+--with-intl small-icu --without-intl
+--without-intl --with-intl small-icu
+--debug-nghttp2
+--prefix /some/path --coverage --dest-cpu ia32 --shared-http-parser --shared-http-parser-includes /some/path --without-intl --with-intl small-icu --debug-nghttp2
