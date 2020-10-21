@@ -66,14 +66,14 @@ UNCOMMENT END RAISINTEN
 icu_versions = {'minimum_icu': 67};
 
 # create option groups
-shared_optgroup = argparse.OptionGroup(parser, "Shared libraries",
+shared_optgroup = parser.add_argument_group("Shared libraries",
     "Flags that allows you to control whether you want to build against "
     "built-in dependencies or its shared representations. If necessary, "
     "provide multiple libraries with comma.")
-intl_optgroup = argparse.OptionGroup(parser, "Internationalization",
+intl_optgroup = parser.add_argument_group("Internationalization",
     "Flags that lets you enable i18n features in Node.js as well as which "
     "library you want to build against.")
-http2_optgroup = argparse.OptionGroup(parser, "HTTP2",
+http2_optgroup = parser.add_argument_group("HTTP2",
     "Flags that allows you to control HTTP2 features in Node.js")
 
 # Options should be in alphabetical order but keep --prefix at the top,
