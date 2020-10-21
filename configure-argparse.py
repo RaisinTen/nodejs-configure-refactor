@@ -737,7 +737,7 @@ parser.add_argument('-C',
     dest='compile_commands_json',
     help=argparse.SUPPRESS)
 
-(options, args) = parser.parse_args()
+(options, args) = parser.parse_known_args()
 
 # REMOVE BEGIN RAISINTEN
 pprint.pprint(vars(options), indent=4)
