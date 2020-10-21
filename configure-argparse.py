@@ -427,7 +427,7 @@ parser.add_argument('--release-urlbase',
 parser.add_argument('--enable-d8',
     action='store_true',
     dest='enable_d8',
-    help=argparse.SUPPRESS_HELP)  # Unsupported, undocumented.
+    help=argparse.SUPPRESS)  # Unsupported, undocumented.
 
 parser.add_argument('--enable-trace-maps',
     action='store_true',
@@ -618,22 +618,22 @@ parser.add_argument('--without-npm',
 parser.add_argument('--without-report',
     action='store_true',
     dest='unused_without_report',
-    help=argparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS)
 
 parser.add_argument('--with-snapshot',
     action='store_true',
     dest='unused_with_snapshot',
-    help=argparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS)
 
 parser.add_argument('--without-snapshot',
     action='store_true',
     dest='unused_without_snapshot',
-    help=argparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS)
 
 parser.add_argument('--without-siphash',
     action='store_true',
     dest='without_siphash',
-    help=argparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS)
 
 # End dummy list.
 
@@ -735,7 +735,7 @@ parser.add_argument('--node-builtin-modules-path',
 parser.add_argument('-C',
     action='store_true',
     dest='compile_commands_json',
-    help=argparse.SUPPRESS_HELP)
+    help=argparse.SUPPRESS)
 
 (options, args) = parser.parse_args()
 
