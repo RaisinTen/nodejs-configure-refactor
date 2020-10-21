@@ -45,7 +45,7 @@ UNCOMMENT END RAISINTEN
 '''
 
 # parse our options
-parser = argparse.OptionParser()
+parser = argparse.ArgumentParser()
 
 valid_os = ('win', 'mac', 'solaris', 'freebsd', 'openbsd', 'linux',
             'android', 'aix', 'cloudabi')
