@@ -87,16 +87,19 @@ parser.add_argument('--prefix',
 parser.add_argument('--coverage',
     action='store_true',
     dest='coverage',
+    default=None,
     help='Build node with code coverage enabled')
 
 parser.add_argument('--debug',
     action='store_true',
     dest='debug',
+    default=None,
     help='also build debug build')
 
 parser.add_argument('--debug-node',
     action='store_true',
     dest='debug_node',
+    default=None,
     help='build the Node.js part of the binary with debugging symbols')
 
 parser.add_argument('--dest-cpu',
@@ -125,50 +128,59 @@ parser.add_argument('--dest-os',
 parser.add_argument('--error-on-warn',
     action='store_true',
     dest='error_on_warn',
+    default=None,
     help='Turn compiler warnings into errors for node core sources.')
 
 parser.add_argument('--experimental-quic',
     action='store_true',
     dest='experimental_quic',
+    default=None,
     help='enable experimental quic support')
 
 parser.add_argument('--gdb',
     action='store_true',
     dest='gdb',
+    default=None,
     help='add gdb support')
 
 parser.add_argument('--no-ifaddrs',
     action='store_true',
     dest='no_ifaddrs',
+    default=None,
     help='use on deprecated SunOS systems that do not support ifaddrs.h')
 
 parser.add_argument("--fully-static",
     action="store_true",
     dest="fully_static",
+    default=None,
     help="Generate an executable without external dynamic libraries. This "
          "will not work on OSX when using the default compilation environment")
 
 parser.add_argument("--partly-static",
     action="store_true",
     dest="partly_static",
+    default=None,
     help="Generate an executable with libgcc and libstdc++ libraries. This "
          "will not work on OSX when using the default compilation environment")
 
 parser.add_argument("--enable-pgo-generate",
     action="store_true",
     dest="enable_pgo_generate",
+    default=None,
     help="Enable profiling with pgo of a binary. This feature is only available "
          "on linux with gcc and g++ 5.4.1 or newer.")
 
 parser.add_argument("--enable-pgo-use",
     action="store_true",
     dest="enable_pgo_use",
+    default=None,
     help="Enable use of the profile generated with --enable-pgo-generate. This "
          "feature is only available on linux with gcc and g++ 5.4.1 or newer.")
 
 parser.add_argument("--enable-lto",
     action="store_true",
     dest="enable_lto",
+    default=None,
     help="Enable compiling with lto of a binary. This feature is only available "
          "on linux with gcc and g++ 5.4.1 or newer.")
 
@@ -188,6 +200,7 @@ parser.add_argument('--openssl-default-cipher-list',
 parser.add_argument("--openssl-no-asm",
     action="store_true",
     dest="openssl_no_asm",
+    default=None,
     help="Do not build optimized assembly for OpenSSL")
 
 parser.add_argument('--openssl-fips',
@@ -198,11 +211,13 @@ parser.add_argument('--openssl-fips',
 parser.add_argument('--openssl-is-fips',
     action='store_true',
     dest='openssl_is_fips',
+    default=None,
     help='specifies that the OpenSSL library is FIPS compatible')
 
 parser.add_argument('--openssl-use-def-ca-store',
     action='store_true',
     dest='use_openssl_ca_store',
+    default=None,
     help='Use OpenSSL supplied CA store instead of compiled-in Mozilla CA copy.')
 
 parser.add_argument('--openssl-system-ca-path',
@@ -214,11 +229,13 @@ parser.add_argument('--openssl-system-ca-path',
 parser.add_argument('--experimental-http-parser',
     action='store_true',
     dest='experimental_http_parser',
+    default=None,
     help='(no-op)')
 
 shared_optgroup.add_argument('--shared-http-parser',
     action='store_true',
     dest='shared_http_parser',
+    default=None,
     help='link to a shared http_parser DLL instead of static linking')
 
 shared_optgroup.add_argument('--shared-http-parser-includes',
@@ -240,6 +257,7 @@ shared_optgroup.add_argument('--shared-http-parser-libpath',
 shared_optgroup.add_argument('--shared-libuv',
     action='store_true',
     dest='shared_libuv',
+    default=None,
     help='link to a shared libuv DLL instead of static linking')
 
 shared_optgroup.add_argument('--shared-libuv-includes',
@@ -261,6 +279,7 @@ shared_optgroup.add_argument('--shared-libuv-libpath',
 shared_optgroup.add_argument('--shared-nghttp2',
     action='store_true',
     dest='shared_nghttp2',
+    default=None,
     help='link to a shared nghttp2 DLL instead of static linking')
 
 shared_optgroup.add_argument('--shared-nghttp2-includes',
@@ -282,6 +301,7 @@ shared_optgroup.add_argument('--shared-nghttp2-libpath',
 shared_optgroup.add_argument('--shared-ngtcp2',
     action='store_true',
     dest='shared_ngtcp2',
+    default=None,
     help='link to a shared ngtcp2 DLL instead of static linking')
 
 shared_optgroup.add_argument('--shared-ngtcp2-includes',
@@ -303,6 +323,7 @@ shared_optgroup.add_argument('--shared-ngtcp2-libpath',
 shared_optgroup.add_argument('--shared-nghttp3',
     action='store_true',
     dest='shared_nghttp3',
+    default=None,
     help='link to a shared nghttp3 DLL instead of static linking')
 
 shared_optgroup.add_argument('--shared-nghttp3-includes',
@@ -324,6 +345,7 @@ shared_optgroup.add_argument('--shared-nghttp3-libpath',
 shared_optgroup.add_argument('--shared-openssl',
     action='store_true',
     dest='shared_openssl',
+    default=None,
     help='link to a shared OpenSSl DLL instead of static linking')
 
 shared_optgroup.add_argument('--shared-openssl-includes',
@@ -345,6 +367,7 @@ shared_optgroup.add_argument('--shared-openssl-libpath',
 shared_optgroup.add_argument('--shared-zlib',
     action='store_true',
     dest='shared_zlib',
+    default=None,
     help='link to a shared zlib DLL instead of static linking')
 
 shared_optgroup.add_argument('--shared-zlib-includes',
@@ -366,6 +389,7 @@ shared_optgroup.add_argument('--shared-zlib-libpath',
 shared_optgroup.add_argument('--shared-brotli',
     action='store_true',
     dest='shared_brotli',
+    default=None,
     help='link to a shared brotli DLL instead of static linking')
 
 shared_optgroup.add_argument('--shared-brotli-includes',
@@ -387,6 +411,7 @@ shared_optgroup.add_argument('--shared-brotli-libpath',
 shared_optgroup.add_argument('--shared-cares',
     action='store_true',
     dest='shared_cares',
+    default=None,
     help='link to a shared cares DLL instead of static linking')
 
 shared_optgroup.add_argument('--shared-cares-includes',
@@ -427,16 +452,19 @@ parser.add_argument('--release-urlbase',
 parser.add_argument('--enable-d8',
     action='store_true',
     dest='enable_d8',
+    default=None,
     help=argparse.SUPPRESS)  # Unsupported, undocumented.
 
 parser.add_argument('--enable-trace-maps',
     action='store_true',
     dest='trace_maps',
+    default=None,
     help='Enable the --trace-maps flag in V8 (use at your own risk)')
 
 parser.add_argument('--experimental-enable-pointer-compression',
     action='store_true',
     dest='enable_pointer_compression',
+    default=None,
     help='[Experimental] Enable V8 pointer compression (limits max heap to 4GB and breaks ABI compatibility)')
 
 parser.add_argument('--v8-options',
@@ -447,6 +475,7 @@ parser.add_argument('--v8-options',
 parser.add_argument('--with-ossfuzz',
     action='store_true',
     dest='ossfuzz',
+    default=None,
     help='Enables building of fuzzers. This command should be run in an OSS-Fuzz Docker image.')
 
 parser.add_argument('--with-arm-float-abi',
@@ -490,21 +519,25 @@ parser.add_argument('--with-mips-float-abi',
 parser.add_argument('--with-dtrace',
     action='store_true',
     dest='with_dtrace',
+    default=None,
     help='build with DTrace (default is true on sunos and darwin)')
 
 parser.add_argument('--with-etw',
     action='store_true',
     dest='with_etw',
+    default=None,
     help='build with ETW (default is true on Windows)')
 
 parser.add_argument('--use-largepages',
     action='store_true',
     dest='node_use_large_pages',
+    default=None,
     help='This option has no effect. --use-largepages is now a runtime option.')
 
 parser.add_argument('--use-largepages-script-lld',
     action='store_true',
     dest='node_use_large_pages_script_lld',
+    default=None,
     help='This option has no effect. --use-largepages is now a runtime option.')
 
 parser.add_argument('--use-section-ordering-file',
@@ -561,16 +594,19 @@ intl_optgroup.add_argument('--with-icu-default-data-dir',
 parser.add_argument('--with-ltcg',
     action='store_true',
     dest='with_ltcg',
+    default=None,
     help='Use Link Time Code Generation. This feature is only available on Windows.')
 
 parser.add_argument('--without-node-snapshot',
     action='store_true',
     dest='without_node_snapshot',
+    default=None,
     help='Turn off V8 snapshot integration. Currently experimental.')
 
 parser.add_argument('--without-node-code-cache',
     action='store_true',
     dest='without_node_code_cache',
+    default=None,
     help='Turn off V8 Code cache integration.')
 
 intl_optgroup.add_argument('--download',
@@ -590,11 +626,13 @@ parser.add_argument_group(intl_optgroup)
 parser.add_argument('--debug-lib',
     action='store_true',
     dest='node_debug_lib',
+    default=None,
     help='build lib with DCHECK macros')
 
 http2_optgroup.add_argument('--debug-nghttp2',
     action='store_true',
     dest='debug_nghttp2',
+    default=None,
     help='build nghttp2 with DEBUGBUILD (default is false)')
 
 parser.add_argument_group(http2_optgroup)
@@ -602,37 +640,44 @@ parser.add_argument_group(http2_optgroup)
 parser.add_argument('--without-dtrace',
     action='store_true',
     dest='without_dtrace',
+    default=None,
     help='build without DTrace')
 
 parser.add_argument('--without-etw',
     action='store_true',
     dest='without_etw',
+    default=None,
     help='build without ETW')
 
 parser.add_argument('--without-npm',
     action='store_true',
     dest='without_npm',
+    default=None,
     help='do not install the bundled npm (package manager)')
 
 # Dummy option for backwards compatibility
 parser.add_argument('--without-report',
     action='store_true',
     dest='unused_without_report',
+    default=None,
     help=argparse.SUPPRESS)
 
 parser.add_argument('--with-snapshot',
     action='store_true',
     dest='unused_with_snapshot',
+    default=None,
     help=argparse.SUPPRESS)
 
 parser.add_argument('--without-snapshot',
     action='store_true',
     dest='unused_without_snapshot',
+    default=None,
     help=argparse.SUPPRESS)
 
 parser.add_argument('--without-siphash',
     action='store_true',
     dest='without_siphash',
+    default=None,
     help=argparse.SUPPRESS)
 
 # End dummy list.
@@ -640,42 +685,50 @@ parser.add_argument('--without-siphash',
 parser.add_argument('--without-ssl',
     action='store_true',
     dest='without_ssl',
+    default=None,
     help='build without SSL (disables crypto, https, inspector, etc.)')
 
 parser.add_argument('--without-node-options',
     action='store_true',
     dest='without_node_options',
+    default=None,
     help='build without NODE_OPTIONS support')
 
 parser.add_argument('--ninja',
     action='store_true',
     dest='use_ninja',
+    default=None,
     help='generate build files for use with Ninja')
 
 parser.add_argument('--enable-asan',
     action='store_true',
     dest='enable_asan',
+    default=None,
     help='compile for Address Sanitizer to find memory bugs')
 
 parser.add_argument('--enable-static',
     action='store_true',
     dest='enable_static',
+    default=None,
     help='build as static library')
 
 parser.add_argument('--no-browser-globals',
     action='store_true',
     dest='no_browser_globals',
+    default=None,
     help='do not export browser globals like setTimeout, console, etc. ' +
          '(This mode is not officially supported for regular applications)')
 
 parser.add_argument('--without-inspector',
     action='store_true',
     dest='without_inspector',
+    default=None,
     help='disable the V8 inspector protocol')
 
 parser.add_argument('--shared',
     action='store_true',
     dest='shared',
+    default=None,
     help='compile shared library for embedding node in another project. ' +
          '(This mode is not officially supported for regular applications)')
 
@@ -735,6 +788,7 @@ parser.add_argument('--node-builtin-modules-path',
 parser.add_argument('-C',
     action='store_true',
     dest='compile_commands_json',
+    default=None,
     help=argparse.SUPPRESS)
 
 (options, args) = parser.parse_known_args()
