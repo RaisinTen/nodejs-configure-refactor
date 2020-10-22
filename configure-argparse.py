@@ -82,7 +82,7 @@ parser.add_argument('--prefix',
     action='store',
     dest='prefix',
     default='/usr/local',
-    help='select the install prefix [default: %default]')
+    help='select the install prefix [default: %(default)s]')
 
 parser.add_argument('--coverage',
     action='store_true',
@@ -230,7 +230,7 @@ shared_optgroup.add_argument('--shared-http-parser-libname',
     action='store',
     dest='shared_http_parser_libname',
     default='http_parser',
-    help='alternative lib name to link to [default: %default]')
+    help='alternative lib name to link to [default: %(default)s]')
 
 shared_optgroup.add_argument('--shared-http-parser-libpath',
     action='store',
@@ -251,7 +251,7 @@ shared_optgroup.add_argument('--shared-libuv-libname',
     action='store',
     dest='shared_libuv_libname',
     default='uv',
-    help='alternative lib name to link to [default: %default]')
+    help='alternative lib name to link to [default: %(default)s]')
 
 shared_optgroup.add_argument('--shared-libuv-libpath',
     action='store',
@@ -272,7 +272,7 @@ shared_optgroup.add_argument('--shared-nghttp2-libname',
     action='store',
     dest='shared_nghttp2_libname',
     default='nghttp2',
-    help='alternative lib name to link to [default: %default]')
+    help='alternative lib name to link to [default: %(default)s]')
 
 shared_optgroup.add_argument('--shared-nghttp2-libpath',
     action='store',
@@ -293,7 +293,7 @@ shared_optgroup.add_argument('--shared-ngtcp2-libname',
     action='store',
     dest='shared_ngtcp2_libname',
     default='ngtcp2',
-    help='alternative lib name to link to [default: %default]')
+    help='alternative lib name to link to [default: %(default)s]')
 
 shared_optgroup.add_argument('--shared-ngtcp2-libpath',
     action='store',
@@ -314,7 +314,7 @@ shared_optgroup.add_argument('--shared-nghttp3-libname',
     action='store',
     dest='shared_nghttp3_libname',
     default='nghttp3',
-    help='alternative lib name to link to [default: %default]')
+    help='alternative lib name to link to [default: %(default)s]')
 
 shared_optgroup.add_argument('--shared-nghttp3-libpath',
     action='store',
@@ -335,7 +335,7 @@ shared_optgroup.add_argument('--shared-openssl-libname',
     action='store',
     dest='shared_openssl_libname',
     default='crypto,ssl',
-    help='alternative lib name to link to [default: %default]')
+    help='alternative lib name to link to [default: %(default)s]')
 
 shared_optgroup.add_argument('--shared-openssl-libpath',
     action='store',
@@ -356,7 +356,7 @@ shared_optgroup.add_argument('--shared-zlib-libname',
     action='store',
     dest='shared_zlib_libname',
     default='z',
-    help='alternative lib name to link to [default: %default]')
+    help='alternative lib name to link to [default: %(default)s]')
 
 shared_optgroup.add_argument('--shared-zlib-libpath',
     action='store',
@@ -377,7 +377,7 @@ shared_optgroup.add_argument('--shared-brotli-libname',
     action='store',
     dest='shared_brotli_libname',
     default='brotlidec,brotlienc',
-    help='alternative lib name to link to [default: %default]')
+    help='alternative lib name to link to [default: %(default)s]')
 
 shared_optgroup.add_argument('--shared-brotli-libpath',
     action='store',
@@ -398,7 +398,7 @@ shared_optgroup.add_argument('--shared-cares-libname',
     action='store',
     dest='shared_cares_libname',
     default='cares',
-    help='alternative lib name to link to [default: %default]')
+    help='alternative lib name to link to [default: %(default)s]')
 
 shared_optgroup.add_argument('--shared-cares-libpath',
     action='store',
@@ -460,7 +460,7 @@ parser.add_argument('--with-arm-fpu',
     action='store',
     dest='arm_fpu',
     choices=valid_arm_fpu,
-    help='ARM FPU mode ({0}) [default: %default]'.format(
+    help='ARM FPU mode ({0}) [default: %(default)s]'.format(
         ', '.join(valid_arm_fpu)))
 
 parser.add_argument('--with-mips-arch-variant',
@@ -468,7 +468,7 @@ parser.add_argument('--with-mips-arch-variant',
     dest='mips_arch_variant',
     default='r2',
     choices=valid_mips_arch,
-    help='MIPS arch variant ({0}) [default: %default]'.format(
+    help='MIPS arch variant ({0}) [default: %(default)s]'.format(
         ', '.join(valid_mips_arch)))
 
 parser.add_argument('--with-mips-fpu-mode',
@@ -476,7 +476,7 @@ parser.add_argument('--with-mips-fpu-mode',
     dest='mips_fpu_mode',
     default='fp32',
     choices=valid_mips_fpu,
-    help='MIPS FPU mode ({0}) [default: %default]'.format(
+    help='MIPS FPU mode ({0}) [default: %(default)s]'.format(
         ', '.join(valid_mips_fpu)))
 
 parser.add_argument('--with-mips-float-abi',
@@ -484,7 +484,7 @@ parser.add_argument('--with-mips-float-abi',
     dest='mips_float_abi',
     default='hard',
     choices=valid_mips_float_abi,
-    help='MIPS floating-point ABI ({0}) [default: %default]'.format(
+    help='MIPS floating-point ABI ({0}) [default: %(default)s]'.format(
         ', '.join(valid_mips_float_abi)))
 
 parser.add_argument('--with-dtrace',
@@ -520,7 +520,7 @@ intl_optgroup.add_argument('--with-intl',
     dest='with_intl',
     default='full-icu',
     choices=valid_intl_modes,
-    help='Intl mode (valid choices: {0}) [default: %default]'.format(
+    help='Intl mode (valid choices: {0}) [default: %(default)s]'.format(
         ', '.join(valid_intl_modes)))
 
 intl_optgroup.add_argument('--without-intl',
@@ -541,7 +541,7 @@ intl_optgroup.add_argument('--with-icu-locales',
     dest='with_icu_locales',
     default=icu_default_locales,
     help='Comma-separated list of locales for "small-icu". "root" is assumed. '
-        '[default: %default]')
+        '[default: %(default)s]')
 
 intl_optgroup.add_argument('--with-icu-source',
     action='store',
@@ -583,7 +583,7 @@ intl_optgroup.add_argument('--download-path',
     action='store',
     dest='download_path',
     default='deps',
-    help='Download directory [default: %default]')
+    help='Download directory [default: %(default)s]')
 
 parser.add_argument_group(intl_optgroup)
 
