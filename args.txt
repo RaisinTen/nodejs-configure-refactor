@@ -1,7 +1,9 @@
 
+arg1 arg2 arg1
 --prefix /some/path
 --prefix /some/path --prefix /some/other/path
 --coverage
+--coverage args
 --coverage --coverage
 --prefix /some/path --coverage
 --coverage --prefix /some/path
